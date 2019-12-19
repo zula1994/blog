@@ -1,0 +1,314 @@
+<html>
+
+<head>
+    <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>
+    爬虫readme | 肥喵喵
+</title>
+<link rel="shortcut icon" href="http://zhuluu.cn/favicon.ico?v=1576739907864">
+<!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
+<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="http://zhuluu.cn/styles/main.css">
+<!-- js -->
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<script src="http://zhuluu.cn/media/js/jquery.sticky-sidebar.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
+
+
+        
+</head>
+
+<body>
+    <div class="main">
+        <div class="header">
+    <div class="nav">
+        <div class="logo">
+            <a href="http://zhuluu.cn">
+                <img class="avatar" src="http://zhuluu.cn/images/avatar.png?v=1576739907864" alt="">
+            </a>
+            <div class="site-title">
+                <h1>
+                    肥喵喵
+                </h1>
+            </div>
+        </div>
+        <span class="menu-btn fa fa-align-justify"></span>
+        <div class="menu-container">
+            <ul>
+                
+                    
+                            <li>
+                                <a href="/" class="menu">
+                                    首页
+                                </a>
+                            </li>
+                            
+                                
+                    
+                            <li>
+                                <a href="/archives" class="menu">
+                                    归档
+                                </a>
+                            </li>
+                            
+                                
+                    
+                            <li>
+                                <a href="/tags" class="menu">
+                                    标签
+                                </a>
+                            </li>
+                            
+                                
+                    
+                            <li>
+                                <a href="/post/about" class="menu">
+                                    关于
+                                </a>
+                            </li>
+                            
+                                
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function() {
+        $(".menu-btn").click(function() {
+            $(".menu-container").slideToggle();
+        });
+        $(window).resize(function() {
+
+            if (window.matchMedia('(min-width: 960px)').matches) {
+                $(".menu-container").css('display', 'block')
+            } else {
+                $(".menu-container").css('display', 'none')
+            }
+
+        });
+    });
+</script>
+
+            <div id="main-content" class="post-detail main-container">
+                <!-- left -->
+                <div id="content" class="main-container-left">
+                    <article class="post i-card">
+                        <h2 class="post-title">
+                            爬虫readme
+                        </h2>
+                        <div class="post-info">
+                            <time class="post-time">2019-09-23</time>
+                            
+                        </div>
+                        
+                                <div class="post-content">
+                                    <p>##todo</p>
+<ul class="contains-task-list">
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-5374943"><label class="task-list-item-label" for="task-item-5374943"> 定时爬取代理ip</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-8722338"><label class="task-list-item-label" for="task-item-8722338"> 爬取one 一个 存储数据</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-2128886"><label class="task-list-item-label" for="task-item-2128886"> 添加服务器日志</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-979900"><label class="task-list-item-label" for="task-item-979900"> 写个服务 博客添加</label></li>
+</ul>
+<p>1、代理ip的爬取、使用、导出、导入；</p>
+<p>2、</p>
+<h2 id="使用的工具">使用的工具</h2>
+<h3 id="1-pm2-进程守护">1. pm2 进程守护</h3>
+<pre><code class="language-shell">#pm2 相关命令
+pm2 start app.js #启动
+pm2 list    #查看所有运行中的应用
+pm2 stop    #关闭
+pm2 restart #重启
+pm2 delete  #删除
+</code></pre>
+<h3 id="2-node-schedule-定时器">2. node-schedule 定时器</h3>
+<ol>
+<li><code>Cron风格定时器</code></li>
+</ol>
+<pre><code class="language-javascript">const schedule = require('node-schedule');
+
+const  scheduleCronstyle = ()=&gt;{
+  //每分钟的第30秒定时执行一次:
+    schedule.scheduleJob('30 * * * * *',()=&gt;{
+        console.log('scheduleCronstyle:' + new Date());
+    }); 
+}
+
+scheduleCronstyle();
+</code></pre>
+<p>6个占位符从左到右分别代表：秒、分、时、日、月、周几</p>
+<p><code>*</code> 表示通配符，匹配任意，当秒是<code>*</code>时，表示任意秒数都触发，其它类推</p>
+<pre><code class="language-javascript">每分钟的第30秒触发： '30 * * * * *'
+
+每小时的1分30秒触发 ：'30 1 * * * *'
+
+每天的凌晨1点1分30秒触发 ：'30 1 1 * * *'
+
+每月的1日1点1分30秒触发 ：'30 1 1 1 * *'
+
+2016年的1月1日1点1分30秒触发 ：'30 1 1 1 2016 *'
+
+每周1的1点1分30秒触发 ：'30 1 1 * * 1'   
+</code></pre>
+<ol start="2">
+<li><code>对象文本语法定时器</code></li>
+</ol>
+<pre><code class="language-javascript">const schedule = require('node-schedule');
+
+function scheduleObjectLiteralSyntax(){
+
+    //dayOfWeek
+    //month
+    //dayOfMonth
+    //hour
+    //minute
+    //second
+    //每周一的下午16：11分触发，其它组合可以根据我代码中的注释参数名自由组合
+    schedule.scheduleJob({hour: 16, minute: 11, dayOfWeek: 1}, function(){
+        console.log('scheduleObjectLiteralSyntax:' + new Date());
+    });
+   
+}
+
+scheduleObjectLiteralSyntax();
+</code></pre>
+<ol start="3">
+<li><code>取消定时器</code>   定时器对象的cancl()方法</li>
+</ol>
+<pre><code class="language-javascript">const schedule = require('node-schedule');
+
+function scheduleCancel(){
+
+    var counter = 1;
+    const j = schedule.scheduleJob('* * * * * *', function(){
+        
+        console.log('定时器触发次数：' + counter);
+        counter++;
+        
+    });
+
+    setTimeout(function() {
+        console.log('定时器取消')
+      // 定时器取消
+        j.cancel();   
+    }, 5000);
+    
+}
+
+scheduleCancel();
+</code></pre>
+<h3 id="3-log4js-日志">3. log4js 日志</h3>
+<ol>
+<li>
+<p>分类</p>
+<ul>
+<li><strong>访问日志</strong>: 记录客户端对项目的访问，主要是 http 请求。用于帮助改进和提升网站的性能和用户体验；</li>
+<li><strong>应用日志：</strong> 项目标记和记录位置打印的日志，包括出现异常情况，方便查询项目的运行状态和定位bug（包含了debug、info、warn 和 error等级别）。</li>
+</ul>
+</li>
+<li>
+<p>等级</p>
+<ul>
+<li>如果配置了日志等级，则其只能记录日志等级比设置的更高级别的日志信息</li>
+<li>日志等级图</li>
+</ul>
+<figure data-type="image" tabindex="1"><img src="https://segmentfault.com/img/bVbpvwH?w=600&amp;h=473" alt="clipboard.png"></figure>
+<ul>
+<li>如配置<code>level: 'error'</code>,则只能输出<code>error</code>,<code>fatar</code>,<code>mark</code>级别的日志信息</li>
+</ul>
+</li>
+<li>
+<p>开发</p>
+</li>
+</ol>
+
+                                </div>
+                    </article>
+                    <!--  -->
+                    
+                            <div id="disqus_thread"></div>
+                            <div id="gitalk-container"></div>
+                </div>
+                <!-- middle -->
+                <div class="main-container-middle"></div>
+                <!-- right -->
+                <div id="sidebar" class="main-container-right">
+                    
+                        <!-- toc -->
+                        
+    <div class="toc-card i-card ">
+        <div class="toc-title i-card-title">目录</div>
+        <div class="toc-content">
+            <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E4%BD%BF%E7%94%A8%E7%9A%84%E5%B7%A5%E5%85%B7">使用的工具</a>
+<ul>
+<li><a href="#1-pm2-%E8%BF%9B%E7%A8%8B%E5%AE%88%E6%8A%A4">1. pm2 进程守护</a></li>
+<li><a href="#2-node-schedule-%E5%AE%9A%E6%97%B6%E5%99%A8">2. node-schedule 定时器</a></li>
+<li><a href="#3-log4js-%E6%97%A5%E5%BF%97">3. log4js 日志</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+        <script>
+            function locateCatelogList() {
+                /*获取文章目录集合,可通过:header过滤器*/
+                var alis = $('.post-content :header');
+                /*获取侧边栏目录列表集合**/
+                var sidebar_alis = $('.markdownIt-TOC a');
+                /*获取滚动条到顶部的距离*/
+                var scroll_height = $(window).scrollTop();
+                for (var i = 0; i < alis.length; i++) {
+                    /*获取锚点集合中的元素分别到顶点的距离*/
+                    var a_height = $(alis[i]).offset().top;
+                    if (a_height < scroll_height) {
+                        /*高亮显示*/
+                        sidebar_alis.removeClass('on');
+                        $(sidebar_alis[i]).addClass('on');
+                    }
+                }
+            }
+            $(function() {
+                /*绑定滚动事件 */
+                $(window).bind('scroll', locateCatelogList);
+            });
+        </script>
+    </div>
+    
+                            
+
+                </div>
+
+
+
+
+            </div>
+
+
+            <div class="site-footer">
+  zhuluu.cn |
+  <a class="rss" href="http://zhuluu.cn/atom.xml" target="_blank">RSS</a>
+</div>
+<script>
+  hljs.initHighlightingOnLoad()
+</script>
+
+    </div>
+    <script>
+        $('#sidebar').stickySidebar({
+            topSpacing: 80,
+            // bottomSpacing: 60
+        });
+    </script>
+    
+</body>
+
+</html>
