@@ -7,7 +7,7 @@
 <title>
     解决transform中z-index在safari浏览器中不生效的原因 | 肥喵喵
 </title>
-<link rel="shortcut icon" href="http://zhuluu.cn/favicon.ico?v=1597648347295">
+<link rel="shortcut icon" href="http://zhuluu.cn/favicon.ico?v=1597648380678">
 <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
 <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
@@ -28,7 +28,7 @@
     <div class="nav">
         <div class="logo">
             <a href="http://zhuluu.cn">
-                <img class="avatar" src="http://zhuluu.cn/images/avatar.png?v=1597648347295" alt="">
+                <img class="avatar" src="http://zhuluu.cn/images/avatar.png?v=1597648380678" alt="">
             </a>
             <div class="site-title">
                 <h1>
@@ -104,10 +104,16 @@
                         <div class="post-info">
                             <time class="post-time">2020-08-17</time>
                             
+                                <a href="http://zhuluu.cn/tag/xnvklbbvw/" class="post-tag i-tag
+                            i-tag-success">
+                            #css
+                        </a>
+                                
                         </div>
                         
                                 <div class="post-content">
-                                    <p>做h5页面添加水印时，在ios手机上会出现swiper叠加时 <code>z-index</code> 失效的问题。查了一通才发现是safari浏览器根本不支持添加transform的z-index。</p>
+                                    <!-- more -->
+<p>做h5页面添加水印时，在ios手机上会出现swiper叠加时 <code>z-index</code> 失效的问题。查了一通才发现是safari浏览器根本不支持添加transform的z-index。</p>
 <h2 id="safari-3d变换会忽略z-index的层级">Safari 3D变换会忽略z-index的层级</h2>
 <p>在Safari浏览器下，此Safari浏览器包括iOS的Safari，iPhone上的微信浏览器，以及Mac OS X系统的Safari浏览器，当我们使用3D transform变换的时候，如果祖先元素没有<code>overflow:hidden/scroll/auto</code>等限制，则会直接忽略自身和其他元素的z-index层叠顺序设置，而直接使用真实世界的3D视角进行渲染。</p>
 <h2 id="safari-3d变换会忽略z-index问题解决">Safari 3D变换会忽略z-index问题解决</h2>
