@@ -5,7 +5,7 @@
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>
-    爬虫readme | 肥喵喵
+    解决transform中z-index在safari浏览器中不生效的原因 | 肥喵喵
 </title>
 <link rel="shortcut icon" href="http://zhuluu.cn/favicon.ico?v=1597648347295">
 <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
@@ -99,130 +99,24 @@
                 <div id="content" class="main-container-left">
                     <article class="post i-card">
                         <h2 class="post-title">
-                            爬虫readme
+                            解决transform中z-index在safari浏览器中不生效的原因
                         </h2>
                         <div class="post-info">
-                            <time class="post-time">2019-09-23</time>
+                            <time class="post-time">2020-08-17</time>
                             
                         </div>
                         
                                 <div class="post-content">
-                                    <p>##todo</p>
-<ul class="contains-task-list">
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-762648"><label class="task-list-item-label" for="task-item-762648"> 定时爬取代理ip</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-2146250"><label class="task-list-item-label" for="task-item-2146250"> 爬取one 一个 存储数据</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-347639"><label class="task-list-item-label" for="task-item-347639"> 添加服务器日志</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-7208831"><label class="task-list-item-label" for="task-item-7208831"> 写个服务 博客添加</label></li>
-</ul>
-<p>1、代理ip的爬取、使用、导出、导入；</p>
-<p>2、</p>
-<h2 id="使用的工具">使用的工具</h2>
-<h3 id="1-pm2-进程守护">1. pm2 进程守护</h3>
-<pre><code class="language-shell">#pm2 相关命令
-pm2 start app.js #启动
-pm2 list    #查看所有运行中的应用
-pm2 stop    #关闭
-pm2 restart #重启
-pm2 delete  #删除
-</code></pre>
-<h3 id="2-node-schedule-定时器">2. node-schedule 定时器</h3>
-<ol>
-<li><code>Cron风格定时器</code></li>
-</ol>
-<pre><code class="language-javascript">const schedule = require('node-schedule');
-
-const  scheduleCronstyle = ()=&gt;{
-  //每分钟的第30秒定时执行一次:
-    schedule.scheduleJob('30 * * * * *',()=&gt;{
-        console.log('scheduleCronstyle:' + new Date());
-    }); 
-}
-
-scheduleCronstyle();
-</code></pre>
-<p>6个占位符从左到右分别代表：秒、分、时、日、月、周几</p>
-<p><code>*</code> 表示通配符，匹配任意，当秒是<code>*</code>时，表示任意秒数都触发，其它类推</p>
-<pre><code class="language-javascript">每分钟的第30秒触发： '30 * * * * *'
-
-每小时的1分30秒触发 ：'30 1 * * * *'
-
-每天的凌晨1点1分30秒触发 ：'30 1 1 * * *'
-
-每月的1日1点1分30秒触发 ：'30 1 1 1 * *'
-
-2016年的1月1日1点1分30秒触发 ：'30 1 1 1 2016 *'
-
-每周1的1点1分30秒触发 ：'30 1 1 * * 1'   
-</code></pre>
-<ol start="2">
-<li><code>对象文本语法定时器</code></li>
-</ol>
-<pre><code class="language-javascript">const schedule = require('node-schedule');
-
-function scheduleObjectLiteralSyntax(){
-
-    //dayOfWeek
-    //month
-    //dayOfMonth
-    //hour
-    //minute
-    //second
-    //每周一的下午16：11分触发，其它组合可以根据我代码中的注释参数名自由组合
-    schedule.scheduleJob({hour: 16, minute: 11, dayOfWeek: 1}, function(){
-        console.log('scheduleObjectLiteralSyntax:' + new Date());
-    });
-   
-}
-
-scheduleObjectLiteralSyntax();
-</code></pre>
-<ol start="3">
-<li><code>取消定时器</code>   定时器对象的cancl()方法</li>
-</ol>
-<pre><code class="language-javascript">const schedule = require('node-schedule');
-
-function scheduleCancel(){
-
-    var counter = 1;
-    const j = schedule.scheduleJob('* * * * * *', function(){
-        
-        console.log('定时器触发次数：' + counter);
-        counter++;
-        
-    });
-
-    setTimeout(function() {
-        console.log('定时器取消')
-      // 定时器取消
-        j.cancel();   
-    }, 5000);
-    
-}
-
-scheduleCancel();
-</code></pre>
-<h3 id="3-log4js-日志">3. log4js 日志</h3>
+                                    <p>做h5页面添加水印时，在ios手机上会出现swiper叠加时 <code>z-index</code> 失效的问题。查了一通才发现是safari浏览器根本不支持添加transform的z-index。</p>
+<h2 id="safari-3d变换会忽略z-index的层级">Safari 3D变换会忽略z-index的层级</h2>
+<p>在Safari浏览器下，此Safari浏览器包括iOS的Safari，iPhone上的微信浏览器，以及Mac OS X系统的Safari浏览器，当我们使用3D transform变换的时候，如果祖先元素没有<code>overflow:hidden/scroll/auto</code>等限制，则会直接忽略自身和其他元素的z-index层叠顺序设置，而直接使用真实世界的3D视角进行渲染。</p>
+<h2 id="safari-3d变换会忽略z-index问题解决">Safari 3D变换会忽略z-index问题解决</h2>
 <ol>
 <li>
-<p>分类</p>
-<ul>
-<li><strong>访问日志</strong>: 记录客户端对项目的访问，主要是 http 请求。用于帮助改进和提升网站的性能和用户体验；</li>
-<li><strong>应用日志：</strong> 项目标记和记录位置打印的日志，包括出现异常情况，方便查询项目的运行状态和定位bug（包含了debug、info、warn 和 error等级别）。</li>
-</ul>
+<p>父级，任意父级，非body级别，设置<code>overflow:hidden</code>可恢复和其他浏览器一样的渲染。 (亲测不是很好用)</p>
 </li>
 <li>
-<p>等级</p>
-<ul>
-<li>如果配置了日志等级，则其只能记录日志等级比设置的更高级别的日志信息</li>
-<li>日志等级图</li>
-</ul>
-<figure data-type="image" tabindex="1"><img src="https://segmentfault.com/img/bVbpvwH?w=600&amp;h=473" alt="clipboard.png" loading="lazy"></figure>
-<ul>
-<li>如配置<code>level: 'error'</code>,则只能输出<code>error</code>,<code>fatar</code>,<code>mark</code>级别的日志信息</li>
-</ul>
-</li>
-<li>
-<p>开发</p>
+<p>给需要盖在3D变换的那个元素设置一个足够大的translateZ值。（好使）</p>
 </li>
 </ol>
 
@@ -230,6 +124,15 @@ scheduleCancel();
                     </article>
                     <!--  -->
                     
+                        <div class="next-post">
+                            <div class="next">下一篇</div>
+                            <a href="http://zhuluu.cn/post/bilibili-shou-cang-bo-zhu/">
+                                <h3 class="post-title">
+                                    bilibili收藏博主
+                                </h3>
+                            </a>
+                        </div>
+                        
                             <div id="disqus_thread"></div>
                             <div id="gitalk-container"></div>
                 </div>
@@ -246,13 +149,8 @@ scheduleCancel();
             <ul class="markdownIt-TOC">
 <li>
 <ul>
-<li><a href="#%E4%BD%BF%E7%94%A8%E7%9A%84%E5%B7%A5%E5%85%B7">使用的工具</a>
-<ul>
-<li><a href="#1-pm2-%E8%BF%9B%E7%A8%8B%E5%AE%88%E6%8A%A4">1. pm2 进程守护</a></li>
-<li><a href="#2-node-schedule-%E5%AE%9A%E6%97%B6%E5%99%A8">2. node-schedule 定时器</a></li>
-<li><a href="#3-log4js-%E6%97%A5%E5%BF%97">3. log4js 日志</a></li>
-</ul>
-</li>
+<li><a href="#safari-3d%E5%8F%98%E6%8D%A2%E4%BC%9A%E5%BF%BD%E7%95%A5z-index%E7%9A%84%E5%B1%82%E7%BA%A7">Safari 3D变换会忽略z-index的层级</a></li>
+<li><a href="#safari-3d%E5%8F%98%E6%8D%A2%E4%BC%9A%E5%BF%BD%E7%95%A5z-index%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3">Safari 3D变换会忽略z-index问题解决</a></li>
 </ul>
 </li>
 </ul>
