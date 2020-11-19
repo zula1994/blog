@@ -5,7 +5,7 @@
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>
-    scss 学习笔记总结 | 肥喵喵
+    ES6及ES5常用方法 | 肥喵喵
 </title>
 <link rel="shortcut icon" href="http://zhuluu.cn/favicon.ico?v=1605779186210">
 <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
@@ -99,23 +99,58 @@
                 <div id="content" class="main-container-left">
                     <article class="post i-card">
                         <h2 class="post-title">
-                            scss 学习笔记总结
+                            ES6及ES5常用方法
                         </h2>
                         <div class="post-info">
-                            <time class="post-time">2019-10-29</time>
+                            <time class="post-time">2020-11-19</time>
                             
                         </div>
                         
                                 <div class="post-content">
-                                    <ul>
-<li>注释</li>
-<li>设置文件编码 编码<code>@charset &quot;encoding-name&quot;;</code> , 若需要支持中文注释,在SCSS文件的顶部写上<code>@charset &quot;UTF-8&quot;;</code></li>
+                                    <h2 id="字符串">字符串</h2>
+<ul>
+<li>可以使用 for...of 正确遍历字符串：</li>
 </ul>
+<pre><code class="language-javascript"> let str = '😀🤣😜😍🤗🤔'
+ for (const emoji of str) {
+      console.log(emoji) // 😀🤣😜😍🤗🤔
+ }
+</code></pre>
+<ul>
+<li>字符串是否包含子串：（第二个参数，表示开始搜索的位置）
+<ul>
+<li>includes()：返回布尔值，表示是否找到了参数字符串。</li>
+<li>startsWith()：返回布尔值，表示参数字符串是否在原字符串的头部。</li>
+<li>endsWith()：返回布尔值，表示参数字符串是否在原字符串的尾部。</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-javascript">let s = 'Hello world!'
+  
+s.includes('Hello', 6)   // false
+s.startsWith('world', 6) // true
+s.endsWith('Hello', 5)   // true
+</code></pre>
+<ul>
+<li>repeat(n) 将当前字符串重复 n 次后，返回一个新字符串：</li>
+</ul>
+<pre><code class="language-javascript">'😯'.repeat(3)
+&quot;😯😯😯&quot;
+</code></pre>
 
                                 </div>
                     </article>
                     <!--  -->
                     
+                        <div class="next-post">
+                            <div class="next">下一篇</div>
+                            <a href="http://zhuluu.cn/post/css-mian-shi-ti-01-shi-me-shi-bfcshi-me-tiao-jian-xia-hui-hong-fa-ying-yong-chang-jing-you-na-xie/">
+                                <h3 class="post-title">
+                                    css： 什么是BFC？什么条件下会触发？应用场景有哪些？ 
+                                </h3>
+                            </a>
+                        </div>
+                        
                             <div id="disqus_thread"></div>
                             <div id="gitalk-container"></div>
                 </div>
@@ -124,32 +159,46 @@
                 <!-- right -->
                 <div id="sidebar" class="main-container-right">
                     
-                                <!-- id-card -->
-                                
-    <div class="id_card i-card">
-        <div class="id_card-avatar" style="background-image: url(http://zhuluu.cn/images/avatar.png?v=1605779186210)">
-        </div>
-        <h1 class="id_card-title">
-            肥喵喵
-        </h1>
-        <h2 class="id_card-description">
-            杂记
-        </h2>
-        <!--  -->
-        <div class="id_card-sns">
-            <!-- github -->
-            
-                    <!-- twitter -->
-                    
-                            <!-- weibo -->
-                            
-                                    <!-- facebook -->
-                                    
+                        <!-- toc -->
+                        
+    <div class="toc-card i-card ">
+        <div class="toc-title i-card-title">目录</div>
+        <div class="toc-content">
+            <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E5%AD%97%E7%AC%A6%E4%B8%B2">字符串</a></li>
+</ul>
+</li>
+</ul>
 
         </div>
+        <script>
+            function locateCatelogList() {
+                /*获取文章目录集合,可通过:header过滤器*/
+                var alis = $('.post-content :header');
+                /*获取侧边栏目录列表集合**/
+                var sidebar_alis = $('.markdownIt-TOC a');
+                /*获取滚动条到顶部的距离*/
+                var scroll_height = $(window).scrollTop();
+                for (var i = 0; i < alis.length; i++) {
+                    /*获取锚点集合中的元素分别到顶点的距离*/
+                    var a_height = $(alis[i]).offset().top;
+                    if (a_height < scroll_height) {
+                        /*高亮显示*/
+                        sidebar_alis.removeClass('on');
+                        $(sidebar_alis[i]).addClass('on');
+                    }
+                }
+            }
+            $(function() {
+                /*绑定滚动事件 */
+                $(window).bind('scroll', locateCatelogList);
+            });
+        </script>
     </div>
     
-                                    
+                            
 
                 </div>
 

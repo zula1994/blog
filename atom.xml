@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://zhuluu.cn</id>
     <title>肥喵喵</title>
-    <updated>2020-08-17T07:15:55.692Z</updated>
+    <updated>2020-11-19T09:46:36.203Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="http://zhuluu.cn"/>
     <link rel="self" href="http://zhuluu.cn/atom.xml"/>
@@ -10,6 +10,74 @@
     <logo>http://zhuluu.cn/images/avatar.png</logo>
     <icon>http://zhuluu.cn/favicon.ico</icon>
     <rights>All rights reserved 2020, 肥喵喵</rights>
+    <entry>
+        <title type="html"><![CDATA[ES6及ES5常用方法]]></title>
+        <id>http://zhuluu.cn/post/es6-ji-es5-chang-yong-fang-fa/</id>
+        <link href="http://zhuluu.cn/post/es6-ji-es5-chang-yong-fang-fa/">
+        </link>
+        <updated>2020-11-19T09:37:50.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="字符串">字符串</h2>
+<ul>
+<li>可以使用 for...of 正确遍历字符串：</li>
+</ul>
+<pre><code class="language-javascript"> let str = '😀🤣😜😍🤗🤔'
+ for (const emoji of str) {
+      console.log(emoji) // 😀🤣😜😍🤗🤔
+ }
+</code></pre>
+<ul>
+<li>字符串是否包含子串：（第二个参数，表示开始搜索的位置）
+<ul>
+<li>includes()：返回布尔值，表示是否找到了参数字符串。</li>
+<li>startsWith()：返回布尔值，表示参数字符串是否在原字符串的头部。</li>
+<li>endsWith()：返回布尔值，表示参数字符串是否在原字符串的尾部。</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-javascript">let s = 'Hello world!'
+  
+s.includes('Hello', 6)   // false
+s.startsWith('world', 6) // true
+s.endsWith('Hello', 5)   // true
+</code></pre>
+<ul>
+<li>repeat(n) 将当前字符串重复 n 次后，返回一个新字符串：</li>
+</ul>
+<pre><code class="language-javascript">'😯'.repeat(3)
+&quot;😯😯😯&quot;
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[css： 什么是BFC？什么条件下会触发？应用场景有哪些？ ]]></title>
+        <id>http://zhuluu.cn/post/css-mian-shi-ti-01-shi-me-shi-bfcshi-me-tiao-jian-xia-hui-hong-fa-ying-yong-chang-jing-you-na-xie/</id>
+        <link href="http://zhuluu.cn/post/css-mian-shi-ti-01-shi-me-shi-bfcshi-me-tiao-jian-xia-hui-hong-fa-ying-yong-chang-jing-you-na-xie/">
+        </link>
+        <updated>2020-10-14T07:48:56.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="1-什么是bfc">1. 什么是BFC？</h2>
+<blockquote>
+<p>W3C对BFC的定义如下： 浮动元素和绝对定位元素，非块级盒子的块级容器（例如 inline-blocks, table-cells, 和 table-captions），以及overflow值不为&quot;visiable&quot;的块级盒子，都会为他们的内容创建新的BFC（Block Fromatting Context， 即块级格式上下文）。</p>
+</blockquote>
+<h2 id="2-触发条件">2. 触发条件</h2>
+<ul>
+<li>浮动元素</li>
+<li>绝对定位元素或相对定位元素（position:fixed | absolute）</li>
+<li>行内块元素</li>
+<li>table</li>
+<li>overflow不为visiable</li>
+</ul>
+<h2 id="3-bfc渲染规则">3. BFC渲染规则</h2>
+<p>（1）BFC垂直方向边距重叠</p>
+<p>（2）BFC的区域不会与浮动元素的box重叠</p>
+<p>（3）BFC是一个独立的容器，外面的元素不会影响里面的元素</p>
+<p>（4）计算BFC高度的时候浮动元素也会参与计算</p>
+<h2 id="4-应用场景">4. 应用场景</h2>
+<ol>
+<li>浮动元素引起的父元素高度塌陷</li>
+<li>避免外边距折叠（margin-top和margin-bottom折叠）</li>
+</ol>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[解决transform中z-index在safari浏览器中不生效的原因]]></title>
         <id>http://zhuluu.cn/post/jie-jue-transform-zhong-z-index-zai-safari-liu-lan-qi-zhong-bu-sheng-xiao-de-yuan-yin/</id>
