@@ -2,14 +2,14 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://zhuluu.cn</id>
     <title>肥喵喵</title>
-    <updated>2020-11-19T09:46:36.203Z</updated>
+    <updated>2021-03-11T08:30:18.140Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="http://zhuluu.cn"/>
     <link rel="self" href="http://zhuluu.cn/atom.xml"/>
     <subtitle>杂记</subtitle>
     <logo>http://zhuluu.cn/images/avatar.png</logo>
     <icon>http://zhuluu.cn/favicon.ico</icon>
-    <rights>All rights reserved 2020, 肥喵喵</rights>
+    <rights>All rights reserved 2021, 肥喵喵</rights>
     <entry>
         <title type="html"><![CDATA[ES6及ES5常用方法]]></title>
         <id>http://zhuluu.cn/post/es6-ji-es5-chang-yong-fang-fa/</id>
@@ -46,6 +46,77 @@ s.endsWith('Hello', 5)   // true
 <pre><code class="language-javascript">'😯'.repeat(3)
 &quot;😯😯😯&quot;
 </code></pre>
+<h2 id="数值">数值</h2>
+<ul>
+<li>Math.trunc()：返回数值整数部分</li>
+<li>Math.sign()：返回数值类型(正数 1、负数 -1、零 0)</li>
+<li>Math.cbrt()：返回数值立方根</li>
+<li>Math.clz32()：返回数值的 32 位无符号整数形式</li>
+<li>Math.imul()：返回两个数值相乘</li>
+<li>Math.fround()：返回数值的 32 位单精度浮点数形式</li>
+<li>Math.hypot()：返回所有数值平方和的平方根</li>
+<li>Math.expm1()：返回 e^n - 1</li>
+<li>Math.log1p()：返回 1 + n 的自然对数(Math.log(1 + n))</li>
+<li>Math.log10()：返回以 10 为底的 n 的对数</li>
+<li>Math.log2()：返回以 2 为底的n的对数</li>
+<li>Math.sinh()：返回 n 的双曲正弦</li>
+<li>Math.cosh()：返回 n 的双曲余弦</li>
+<li>Math.tanh()：返回 n 的双曲正切</li>
+<li>Math.asinh()：返回 n 的反双曲正弦</li>
+<li>Math.acosh()：返回 n 的反双曲余弦</li>
+<li>Math.atanh()：返回 n 的反双曲正切</li>
+</ul>
+<h2 id="数组">数组</h2>
+<ul>
+<li>Array.from() 可以将类数组对象（ NodeList，arguments）和可迭代对象转成数组：</li>
+</ul>
+<pre><code class="language-javascript">// 应用一：字符串转数组
+Array.from('foo')  // ['f', 'o', 'o']
+
+// 应用二：arguments 转数组
+function f() {
+    return Array.from(arguments)
+}
+f(1, 2, 3)  // [1, 2, 3]
+</code></pre>
+<p>如果 Array.from() 带第二个参数 mapFn，将对生成的新数组执行一次 map 操作：</p>
+<pre><code class="language-javascript">Array.from([1, 2, 3], (x) =&gt; x * x )    // [1, 4, 9]
+</code></pre>
+<ul>
+<li>Array.of() 将一组参数转成数组：</li>
+</ul>
+<pre><code class="language-javascript">Array.of(1, 2, 3)  // [1, 2, 3]
+</code></pre>
+<ul>
+<li>
+<p>Array.copyWithin() 在当前数组内部，将指定位置的成员复制到其他位置（会覆盖原来位置的成员），最后返回一个新数组。接收 3 个参数，参数为负数表示右边开始计算：</p>
+<p>target（必选）：替换位置的索引；<br>
+start（可选）：从该位置开始读取数据，默认为 0；<br>
+end（可选）：从该位置结束读取数据（<strong>不包括该位置的数据</strong>），默认为原数组长度；</p>
+</li>
+</ul>
+<pre><code class="language-javascript">const fruits = [&quot;Banana&quot;, &quot;Orange&quot;, &quot;Apple&quot;, &quot;Mango&quot;, &quot;Kiwi&quot;, &quot;Papaya&quot;];
+fruits.copyWithin(2, 0, 2); //[ &quot;Banana&quot;, &quot;Orange&quot;, &quot;Banana&quot;, &quot;Orange&quot;, &quot;Kiwi&quot;, &quot;Papaya&quot; ]
+</code></pre>
+<ul>
+<li>
+<p>查找第一个出现的子成员：find() 和 findIndex()：</p>
+</li>
+<li>
+<p>fill() 使用给定的值来填充数组，有 3 个参数：</p>
+<p>value：填充值；<br>
+start（可选），开始索引，默认为 0；<br>
+end（可选）：结束索引，默认为数组长度，不包括该索引位置的值；</p>
+</li>
+</ul>
+<pre><code class="language-javascript">// 初始化空数组
+Array(3).fill(1)  // [1, 1, 1]
+[1, 2, 3, 4].fill('a', 2, 3) // [ 1, 2, &quot;a&quot;, 4 ]
+</code></pre>
+<ul>
+<li>通过 keys()（键名）、entries()（键值）和 values()（键值对） 获取数组迭代器对象，可以被 for...of 迭代，</li>
+</ul>
+<h2 id="对象">对象</h2>
 ]]></content>
     </entry>
     <entry>

@@ -1,8 +1,9 @@
+<!doctype html>
 <html>
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>css： 什么是BFC？什么条件下会触发？应用场景有哪些？  | 肥喵喵</title>
+<title>我的阅读 | 肥喵喵</title>
 <meta name="description" content="杂记" />
 <link rel="shortcut icon" href="http://zhuluu.cn/favicon.ico">
 <link rel="stylesheet" href="http://zhuluu.cn/styles/main.css">
@@ -15,14 +16,13 @@
 <script src="http://zhuluu.cn/media/js/jquery.magnific-popup.min.js"></script>
 <script src="http://zhuluu.cn/media/js/functions.js"></script>
     <meta name="referrer" content="never">
-    <meta name="description" content="1. 什么是BFC？
-
-W3C对BFC的定义如下： 浮动元素和绝对定位元素，非块级盒子的块级容器（例如 inline-blocks, table-cells, 和 table-captions），以及overflow值不为&quot;vis..." />
-    <meta name="keywords" content="css" />
-    <script src="http://zhuluu.cn/media/js/waterfall.min.js"></script>
-    <script src="http://zhuluu.cn/media/js/prism.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/iMuFeng/bmdb@1.8.0/dist/Bmdb.min.css">
+    <script type='text/javascript' src='https://cdn.jsdelivr.net/gh/iMuFeng/bmdb@1.8.0/dist/Bmdb.min.js'></script>
   </head>
   <body>
+    <!-- start: #wrapper -->
+    <div class="wrapper">
+      
             <header id="header" class="grid-container">
         <!-- start: .menu-wrapper -->
         <div class="menu-mobile"> 
@@ -89,106 +89,14 @@ W3C对BFC的定义如下： 浮动元素和绝对定位元素，非块级盒子�
         </div>
       </div>
 
-      <main id="single" class="main grid-container fullcover no-sidebar aos-init aos-animate" data-aos="fade">
-
-        <div class="center content">
-          <div class="featured-image cover" style="background-image: url('');">
-            <div class="meta top"> 
-              <time class="meta-info" style="float:left;" datetime="2020-10-14"><i class="fa fa-calendar"></i><span class="lately">5 个月前</span></time>
-              
-            </div>
-            <div class="info">
-              <div class="tags ">
-                
-                      <a href="http://zhuluu.cn/tag/xnvklbbvw/" class="ctag ctag-0 ctag-xnvklbbvw" aria-label="">css</a>
-                    
-              </div>
-              <h1 class="title ularge white bold">css： 什么是BFC？什么条件下会触发？应用场景有哪些？ </h1>
-            </div>
-          </div>
-        </div>  
-
+      <main id="friends" class="main fullcover no-sidebar content">
+        <div class="grid-container module-wrapper enable-masonry aos-init aos-animate" data-aos="fade-up">
         <div class="epcl-page-wrapper">
-          <div class="left-content grid-70 np-mobile">
-            <article class="main-article post">
-              <section class="post-content">
-                <div class="text">
-                  <h2 id="1-什么是bfc">1. 什么是BFC？</h2>
-<blockquote>
-<p>W3C对BFC的定义如下： 浮动元素和绝对定位元素，非块级盒子的块级容器（例如 inline-blocks, table-cells, 和 table-captions），以及overflow值不为&quot;visiable&quot;的块级盒子，都会为他们的内容创建新的BFC（Block Fromatting Context， 即块级格式上下文）。</p>
-</blockquote>
-<h2 id="2-触发条件">2. 触发条件</h2>
-<ul>
-<li>浮动元素</li>
-<li>绝对定位元素或相对定位元素（position:fixed | absolute）</li>
-<li>行内块元素</li>
-<li>table</li>
-<li>overflow不为visiable</li>
-</ul>
-<h2 id="3-bfc渲染规则">3. BFC渲染规则</h2>
-<p>（1）BFC垂直方向边距重叠</p>
-<p>（2）BFC的区域不会与浮动元素的box重叠</p>
-<p>（3）BFC是一个独立的容器，外面的元素不会影响里面的元素</p>
-<p>（4）计算BFC高度的时候浮动元素也会参与计算</p>
-<h2 id="4-应用场景">4. 应用场景</h2>
-<ol>
-<li>浮动元素引起的父元素高度塌陷</li>
-<li>避免外边距折叠（margin-top和margin-bottom折叠）</li>
-</ol>
-
-                </div>
-                <div class="clear"></div>
-              </section>
-            </article>
-            <div class="clear"></div>
-
-            <section class="related section">
-              
-              <article class="prev grid-50 tablet-grid-50 grid-parent">
-                <div class="thumb cover lazy loaded" style="background-image: url('http://zhuluu.cn/media/images/gridea.jpg');"></div>
-                 <a href="http://zhuluu.cn/post/es6-ji-es5-chang-yong-fang-fa/" class="full-link"></a>
-                 <div class="info">
-                  <time datetime="2020-11-19">2020-11-19</time>
-                  <h4 class="title white no-margin">ES6及ES5常用方法</h4>
-                </div>
-                 <span class="epcl-button red">
-                  <img src="http://zhuluu.cn/media/images/left-arrow.svg" width="15" alt="Left Arrow">
-                </span>
-                <div class="overlay"></div>
-              </article>
-              
-              
-              <article class="next grid-50 tablet-grid-50 grid-parent">
-                <div class="thumb cover lazy loaded" style="background-image: url('http://zhuluu.cn/media/images/xnvklbbvw.jpg');"></div>
-                 <a href="http://zhuluu.cn/post/jie-jue-transform-zhong-z-index-zai-safari-liu-lan-qi-zhong-bu-sheng-xiao-de-yuan-yin/" class="full-link"></a>
-                 <div class="info">
-                  <time datetime="2020-08-17">2020-08-17</time>
-                  <h4 class="title white no-margin">解决transform中z-index在safari浏览器中不生效的原因</h4>
-                </div>
-                 <span class="epcl-button red">
-                  <img src="http://zhuluu.cn/media/images/right-arrow.svg" width="15" alt="Left Arrow">
-                </span>
-                <div class="overlay"></div>
-              </article>
-              
-
-                <div class="clear"></div>
-            </section>
-
-              <div class="clear"></div>
-              
-            
-              <div id="comments" class="bg-white hosted ">
-                <p>请到客户端“主题--自定义配置--valine”中填入ID和KEY</p>
-              </div>
-              <div class="clear"></div>
-            
-
-            </div>
-          </div>
+          <div class="section-content" style="margin-top:3em;"></div>
+        </div>
+        </div>
       </main>
-
-          <footer id="footer" class="grid-container">
+        <footer id="footer" class="grid-container">
         <div class="widgets row gradient-effect">
             <div class="default-sidebar border-effect">
               <div class="grid-33 tablet-grid-50 mobile-grid-100">
@@ -317,9 +225,15 @@ W3C对BFC的定义如下： 浮动元素和绝对定位元素，非块级盒子�
 
         
 
-      
-    <script src="http://zhuluu.cn/media/js/functions-post.js"></script>
-
+    <script>
+    new Bmdb({
+      type: 'books',
+      selector: '.section-content',
+      secret: '',
+      noMoreText: '没有更多数据了',
+      limit: 30
+    })
+    </script>
     </div>
     <!-- end: #wrapper -->
   </body>

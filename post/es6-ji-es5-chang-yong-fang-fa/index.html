@@ -1,113 +1,121 @@
 <html>
-
-<head>
+  <head>
     <meta charset="utf-8" />
-<meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>
-    ES6及ES5常用方法 | 肥喵喵
-</title>
-<link rel="shortcut icon" href="http://zhuluu.cn/favicon.ico?v=1605779186210">
-<!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
-<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<title>ES6及ES5常用方法 | 肥喵喵</title>
+<meta name="description" content="杂记" />
+<link rel="shortcut icon" href="http://zhuluu.cn/favicon.ico">
 <link rel="stylesheet" href="http://zhuluu.cn/styles/main.css">
-<!-- js -->
-<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
-<script src="http://zhuluu.cn/media/js/jquery.sticky-sidebar.min.js"></script>
-<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
 
+<script src="http://zhuluu.cn/media/js/jquery.min.js"></script>
+<script src="http://zhuluu.cn/media/js/masonry.pkgd.min.js"></script>
+<script src="http://zhuluu.cn/media/js/aos.js"></script>
+<script src="http://zhuluu.cn/media/js/pace.min.js"></script>
+<script src="http://zhuluu.cn/media/js/view-image.min.js"></script>
+<script src="http://zhuluu.cn/media/js/jquery.magnific-popup.min.js"></script>
+<script src="http://zhuluu.cn/media/js/functions.js"></script>
+    <meta name="referrer" content="never">
+    <meta name="description" content="字符串
 
-        
-</head>
+可以使用 for...of 正确遍历字符串：
 
-<body>
-    <div class="main">
-        <div class="header">
-    <div class="nav">
-        <div class="logo">
-            <a href="http://zhuluu.cn">
-                <img class="avatar" src="http://zhuluu.cn/images/avatar.png?v=1605779186210" alt="">
-            </a>
-            <div class="site-title">
-                <h1>
-                    肥喵喵
-                </h1>
+ let str = '😀🤣😜😍🤗🤔'
+ for (const emoji of str) {
+      console.log(emoji) // 😀🤣😜😍�..." />
+    <meta name="keywords" content="" />
+    <script src="http://zhuluu.cn/media/js/waterfall.min.js"></script>
+    <script src="http://zhuluu.cn/media/js/prism.min.js"></script>
+  </head>
+  <body>
+            <header id="header" class="grid-container">
+        <!-- start: .menu-wrapper -->
+        <div class="menu-mobile"> 
+          <i class="fa fa-reorder"></i>
+        </div>
+        <div class="menu-wrapper">
+          <div class="">
+            <div class="logo">
+              <a href="http://zhuluu.cn"><img src="" alt=""></a>
             </div>
-        </div>
-        <span class="menu-btn fa fa-align-justify"></span>
-        <div class="menu-container">
-            <ul>
+            <!-- start: .main-nav -->
+
+            <nav class="main-nav grid-container grid-parent">
+              <ul id="menu-header" class="menu gradient-effect">
+                <li class=""><a href="http://zhuluu.cn" class="menu">首页</a></li>
                 
-                    
-                            <li>
-                                <a href="/" class="menu">
-                                    首页
-                                </a>
-                            </li>
-                            
-                                
-                    
-                            <li>
-                                <a href="/archives" class="menu">
-                                    归档
-                                </a>
-                            </li>
-                            
-                                
-                    
-                            <li>
-                                <a href="/tags" class="menu">
-                                    标签
-                                </a>
-                            </li>
-                            
-                                
-                    
-                            <li>
-                                <a href="/post/about" class="menu">
-                                    关于
-                                </a>
-                            </li>
-                            
-                                
-            </ul>
+                  <li class="" >
+                    <a href="/" class="menu">
+                      首页
+                    </a>
+                  </li>
+                
+                  <li class="" >
+                    <a href="/archives" class="menu">
+                      归档
+                    </a>
+                  </li>
+                
+                  <li class="" >
+                    <a href="/tags" class="menu">
+                      标签
+                    </a>
+                  </li>
+                
+                  <li class="" >
+                    <a href="/post/about" class="menu">
+                      关于
+                    </a>
+                  </li>
+                
+                <li class="search-menu-item hide-on-mobile hide-on-tablet"><a href="#search-lightbox" class="lightbox mfp-inline"><i class="fa fa-search-line"></i></a></li>
+              </ul>
+            </nav>
+            <a href="#search-lightbox" class="lightbox epcl-search-button mfp-inline hide-on-tablet hide-on-desktop"><i class="fa fa-search-line"></i></a>
+            <!-- end: .main-nav -->
+            <div class="clear"></div>
+            <div class="border hide-on-tablet hide-on-mobile"></div>
+          </div>    
+          <div class="clear"></div>
         </div>
-    </div>
-</div>
+        <!-- end: .menu-wrapper -->
+        <div class="clear"></div>
+      </header>
+      <div class="hide-on-mobile hide-on-tablet hide-on-desktop">
+        <div id="search-lightbox" class="grid-container grid-small grid-parent mfp-hide">
+          <div class="search-wrapper section">
+            <form id="gridea-search-form" data-update="1615451405061" action="/search/index.html" class="search-form" _lpchecked="1">
+              <input type="text" name="q" id="s" value="" class="search-field" placeholder="搜点啥..." aria-label="搜点啥..." required="">
+              <button type="submit" class="submit" aria-label="Submit">
+                <i class="fa fa-search-line"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
 
-<script>
-    $(document).ready(function() {
-        $(".menu-btn").click(function() {
-            $(".menu-container").slideToggle();
-        });
-        $(window).resize(function() {
+      <main id="single" class="main grid-container fullcover no-sidebar aos-init aos-animate" data-aos="fade">
 
-            if (window.matchMedia('(min-width: 960px)').matches) {
-                $(".menu-container").css('display', 'block')
-            } else {
-                $(".menu-container").css('display', 'none')
-            }
+        <div class="center content">
+          <div class="featured-image cover" style="background-image: url('');">
+            <div class="meta top"> 
+              <time class="meta-info" style="float:left;" datetime="2020-11-19"><i class="fa fa-calendar"></i><span class="lately">4 个月前</span></time>
+              
+            </div>
+            <div class="info">
+              <div class="tags ">
+                
+              </div>
+              <h1 class="title ularge white bold">ES6及ES5常用方法</h1>
+            </div>
+          </div>
+        </div>  
 
-        });
-    });
-</script>
-
-            <div id="main-content" class="post-detail main-container">
-                <!-- left -->
-                <div id="content" class="main-container-left">
-                    <article class="post i-card">
-                        <h2 class="post-title">
-                            ES6及ES5常用方法
-                        </h2>
-                        <div class="post-info">
-                            <time class="post-time">2020-11-19</time>
-                            
-                        </div>
-                        
-                                <div class="post-content">
-                                    <h2 id="字符串">字符串</h2>
+        <div class="epcl-page-wrapper">
+          <div class="left-content grid-70 np-mobile">
+            <article class="main-article post">
+              <section class="post-content">
+                <div class="text">
+                  <h2 id="字符串">字符串</h2>
 <ul>
 <li>可以使用 for...of 正确遍历字符串：</li>
 </ul>
@@ -137,93 +145,250 @@ s.endsWith('Hello', 5)   // true
 <pre><code class="language-javascript">'😯'.repeat(3)
 &quot;😯😯😯&quot;
 </code></pre>
-
-                                </div>
-                    </article>
-                    <!--  -->
-                    
-                        <div class="next-post">
-                            <div class="next">下一篇</div>
-                            <a href="http://zhuluu.cn/post/css-mian-shi-ti-01-shi-me-shi-bfcshi-me-tiao-jian-xia-hui-hong-fa-ying-yong-chang-jing-you-na-xie/">
-                                <h3 class="post-title">
-                                    css： 什么是BFC？什么条件下会触发？应用场景有哪些？ 
-                                </h3>
-                            </a>
-                        </div>
-                        
-                            <div id="disqus_thread"></div>
-                            <div id="gitalk-container"></div>
-                </div>
-                <!-- middle -->
-                <div class="main-container-middle"></div>
-                <!-- right -->
-                <div id="sidebar" class="main-container-right">
-                    
-                        <!-- toc -->
-                        
-    <div class="toc-card i-card ">
-        <div class="toc-title i-card-title">目录</div>
-        <div class="toc-content">
-            <ul class="markdownIt-TOC">
-<li>
+<h2 id="数值">数值</h2>
 <ul>
-<li><a href="#%E5%AD%97%E7%AC%A6%E4%B8%B2">字符串</a></li>
+<li>Math.trunc()：返回数值整数部分</li>
+<li>Math.sign()：返回数值类型(正数 1、负数 -1、零 0)</li>
+<li>Math.cbrt()：返回数值立方根</li>
+<li>Math.clz32()：返回数值的 32 位无符号整数形式</li>
+<li>Math.imul()：返回两个数值相乘</li>
+<li>Math.fround()：返回数值的 32 位单精度浮点数形式</li>
+<li>Math.hypot()：返回所有数值平方和的平方根</li>
+<li>Math.expm1()：返回 e^n - 1</li>
+<li>Math.log1p()：返回 1 + n 的自然对数(Math.log(1 + n))</li>
+<li>Math.log10()：返回以 10 为底的 n 的对数</li>
+<li>Math.log2()：返回以 2 为底的n的对数</li>
+<li>Math.sinh()：返回 n 的双曲正弦</li>
+<li>Math.cosh()：返回 n 的双曲余弦</li>
+<li>Math.tanh()：返回 n 的双曲正切</li>
+<li>Math.asinh()：返回 n 的反双曲正弦</li>
+<li>Math.acosh()：返回 n 的反双曲余弦</li>
+<li>Math.atanh()：返回 n 的反双曲正切</li>
 </ul>
+<h2 id="数组">数组</h2>
+<ul>
+<li>Array.from() 可以将类数组对象（ NodeList，arguments）和可迭代对象转成数组：</li>
+</ul>
+<pre><code class="language-javascript">// 应用一：字符串转数组
+Array.from('foo')  // ['f', 'o', 'o']
+
+// 应用二：arguments 转数组
+function f() {
+    return Array.from(arguments)
+}
+f(1, 2, 3)  // [1, 2, 3]
+</code></pre>
+<p>如果 Array.from() 带第二个参数 mapFn，将对生成的新数组执行一次 map 操作：</p>
+<pre><code class="language-javascript">Array.from([1, 2, 3], (x) =&gt; x * x )    // [1, 4, 9]
+</code></pre>
+<ul>
+<li>Array.of() 将一组参数转成数组：</li>
+</ul>
+<pre><code class="language-javascript">Array.of(1, 2, 3)  // [1, 2, 3]
+</code></pre>
+<ul>
+<li>
+<p>Array.copyWithin() 在当前数组内部，将指定位置的成员复制到其他位置（会覆盖原来位置的成员），最后返回一个新数组。接收 3 个参数，参数为负数表示右边开始计算：</p>
+<p>target（必选）：替换位置的索引；<br>
+start（可选）：从该位置开始读取数据，默认为 0；<br>
+end（可选）：从该位置结束读取数据（<strong>不包括该位置的数据</strong>），默认为原数组长度；</p>
 </li>
 </ul>
-
-        </div>
-        <script>
-            function locateCatelogList() {
-                /*获取文章目录集合,可通过:header过滤器*/
-                var alis = $('.post-content :header');
-                /*获取侧边栏目录列表集合**/
-                var sidebar_alis = $('.markdownIt-TOC a');
-                /*获取滚动条到顶部的距离*/
-                var scroll_height = $(window).scrollTop();
-                for (var i = 0; i < alis.length; i++) {
-                    /*获取锚点集合中的元素分别到顶点的距离*/
-                    var a_height = $(alis[i]).offset().top;
-                    if (a_height < scroll_height) {
-                        /*高亮显示*/
-                        sidebar_alis.removeClass('on');
-                        $(sidebar_alis[i]).addClass('on');
-                    }
-                }
-            }
-            $(function() {
-                /*绑定滚动事件 */
-                $(window).bind('scroll', locateCatelogList);
-            });
-        </script>
-    </div>
-    
-                            
+<pre><code class="language-javascript">const fruits = [&quot;Banana&quot;, &quot;Orange&quot;, &quot;Apple&quot;, &quot;Mango&quot;, &quot;Kiwi&quot;, &quot;Papaya&quot;];
+fruits.copyWithin(2, 0, 2); //[ &quot;Banana&quot;, &quot;Orange&quot;, &quot;Banana&quot;, &quot;Orange&quot;, &quot;Kiwi&quot;, &quot;Papaya&quot; ]
+</code></pre>
+<ul>
+<li>
+<p>查找第一个出现的子成员：find() 和 findIndex()：</p>
+</li>
+<li>
+<p>fill() 使用给定的值来填充数组，有 3 个参数：</p>
+<p>value：填充值；<br>
+start（可选），开始索引，默认为 0；<br>
+end（可选）：结束索引，默认为数组长度，不包括该索引位置的值；</p>
+</li>
+</ul>
+<pre><code class="language-javascript">// 初始化空数组
+Array(3).fill(1)  // [1, 1, 1]
+[1, 2, 3, 4].fill('a', 2, 3) // [ 1, 2, &quot;a&quot;, 4 ]
+</code></pre>
+<ul>
+<li>通过 keys()（键名）、entries()（键值）和 values()（键值对） 获取数组迭代器对象，可以被 for...of 迭代，</li>
+</ul>
+<h2 id="对象">对象</h2>
 
                 </div>
+                <div class="clear"></div>
+              </section>
+            </article>
+            <div class="clear"></div>
 
+            <section class="related section">
+              
+              
+              <article class="next grid-50 tablet-grid-50 grid-parent">
+                <div class="thumb cover lazy loaded" style="background-image: url('http://zhuluu.cn/media/images/xnvklbbvw.jpg');"></div>
+                 <a href="http://zhuluu.cn/post/css-mian-shi-ti-01-shi-me-shi-bfcshi-me-tiao-jian-xia-hui-hong-fa-ying-yong-chang-jing-you-na-xie/" class="full-link"></a>
+                 <div class="info">
+                  <time datetime="2020-10-14">2020-10-14</time>
+                  <h4 class="title white no-margin">css： 什么是BFC？什么条件下会触发？应用场景有哪些？ </h4>
+                </div>
+                 <span class="epcl-button red">
+                  <img src="http://zhuluu.cn/media/images/right-arrow.svg" width="15" alt="Left Arrow">
+                </span>
+                <div class="overlay"></div>
+              </article>
+              
 
+                <div class="clear"></div>
+            </section>
 
+              <div class="clear"></div>
+              
+            
+              <div id="comments" class="bg-white hosted ">
+                <p>请到客户端“主题--自定义配置--valine”中填入ID和KEY</p>
+              </div>
+              <div class="clear"></div>
+            
 
             </div>
+          </div>
+      </main>
 
+          <footer id="footer" class="grid-container">
+        <div class="widgets row gradient-effect">
+            <div class="default-sidebar border-effect">
+              <div class="grid-33 tablet-grid-50 mobile-grid-100">
+                <section id="tag_cloud-2" class="widget widget_epcl_posts_thumbs underline-effect">
+                  <h4 class="widget-title title white bordered">最新文章</h4>
+                  
+                  
+                  <article class="item post-0 post type-post status-publish format-standard has-post-thumbnail hentry">
+                    <a href="http://zhuluu.cn/post/es6-ji-es5-chang-yong-fang-fa/" class="thumb hover-effect">
+                      <span class="fullimage cover" style="display:block;border-radius:50%;background-image: url('');"></span>
+                    </a>
+                    <div class="info gradient-effect">
+                      <time datetime="2020-11-19">2020-11-19</time>
+                      <h4 class="title usmall">
+                        <a href="http://zhuluu.cn/post/es6-ji-es5-chang-yong-fang-fa/">ES6及ES5常用方法</a>
+                      </h4>
+                    </div>
+                    <div class="clear"></div>
+                  </article>
+                  
+                  
+                  
+                  <article class="item post-1 post type-post status-publish format-standard has-post-thumbnail hentry">
+                    <a href="http://zhuluu.cn/post/css-mian-shi-ti-01-shi-me-shi-bfcshi-me-tiao-jian-xia-hui-hong-fa-ying-yong-chang-jing-you-na-xie/" class="thumb hover-effect">
+                      <span class="fullimage cover" style="display:block;border-radius:50%;background-image: url('');"></span>
+                    </a>
+                    <div class="info gradient-effect">
+                      <time datetime="2020-10-14">2020-10-14</time>
+                      <h4 class="title usmall">
+                        <a href="http://zhuluu.cn/post/css-mian-shi-ti-01-shi-me-shi-bfcshi-me-tiao-jian-xia-hui-hong-fa-ying-yong-chang-jing-you-na-xie/">css： 什么是BFC？什么条件下会触发？应用场景有哪些？ </a>
+                      </h4>
+                    </div>
+                    <div class="clear"></div>
+                  </article>
+                  
+                  
+                  
+                  <article class="item post-2 post type-post status-publish format-standard has-post-thumbnail hentry">
+                    <a href="http://zhuluu.cn/post/jie-jue-transform-zhong-z-index-zai-safari-liu-lan-qi-zhong-bu-sheng-xiao-de-yuan-yin/" class="thumb hover-effect">
+                      <span class="fullimage cover" style="display:block;border-radius:50%;background-image: url('');"></span>
+                    </a>
+                    <div class="info gradient-effect">
+                      <time datetime="2020-08-17">2020-08-17</time>
+                      <h4 class="title usmall">
+                        <a href="http://zhuluu.cn/post/jie-jue-transform-zhong-z-index-zai-safari-liu-lan-qi-zhong-bu-sheng-xiao-de-yuan-yin/">解决transform中z-index在safari浏览器中不生效的原因</a>
+                      </h4>
+                    </div>
+                    <div class="clear"></div>
+                  </article>
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  <div class="clear"></div>
+                </section>
+              </div>
 
-            <div class="site-footer">
-  <a href='http://www.beian.miit.gov.cn'>鄂ICP备18008450号-1</a> |
-  <a class="rss" href="http://zhuluu.cn/atom.xml" target="_blank">RSS</a>
-</div>
-<script>
-  hljs.initHighlightingOnLoad()
-</script>
+              <div class="grid-33 tablet-grid-50 mobile-grid-100">
+                <section id="tag_cloud-2" class="widget widget_tag_cloud underline-effect">
+                  <h4 class="widget-title title white bordered">标签云</h4>
+                  <div class="tagcloud">
+                    
+                      <a href="http://zhuluu.cn/tag/xnvklbbvw/" class="ctag ctag-0 ctag-xnvklbbvw" aria-label="">css</a>
+                    
+                      <a href="http://zhuluu.cn/tag/k0hlN0mmg/" class="ctag ctag-1 ctag-k0hlN0mmg" aria-label="">学习</a>
+                    
+                  </div>
+                  <div class="clear"></div>
+                </section>
+              </div>
+
+              <div class="grid-33 tablet-grid-50 mobile-grid-100">
+                <section id="epcl_about-2" class="widget widget_epcl_about underline-effect">
+                  <h4 class="widget-title title white bordered">关于我</h4>
+                  <div class="avatar">
+                    <a href="" class="translate-effect thumb"><span class="fullimage cover" style="background-image: url(http://zhuluu.cn/images/avatar.png);"></span></a>
+                  </div>
+                  <div class="info">
+                    <h4 class="title small author-name gradient-effect no-margin"><a href="">肥喵喵</a></h4>
+                    <p class="founder">杂记</p>
+                    <div class="social">
+                      
+                        
+                      
+                        
+                      
+                        
+                      
+                        
+                      
+                        
+                      
+                    </div> 
+                  </div>
+                  <div class="clear"></div>
+                  </section>
+              </div>
+
+            </div>
+            <div class="clear"></div>
+        </div>
+
+        <div class="logo">
+          <a href="http://zhuluu.cn"><img src="" alt=""></a>
+        </div>
+        <p class="published border-effect">
+          ©2019 共 8 篇文章
+          <br/>
+          Theme <a href="https://gridea.dev/" target="_blank">「breek」</a> Powered by <a href="https://gridea.dev/" target="_blank">「Gridea」</a>
+        </p>
+        
+        <a href="javascript:void(0)" id="back-to-top" class="epcl-button dark" style="display:none">
+          <i class="fa fa-arrow"></i>
+        </a>
+    </footer>
+    
+    <div class="clear"></div>
+
+        
+
+      
+    <script src="http://zhuluu.cn/media/js/functions-post.js"></script>
 
     </div>
-    <script>
-        $('#sidebar').stickySidebar({
-            topSpacing: 80,
-            // bottomSpacing: 60
-        });
-    </script>
-    
-</body>
-
+    <!-- end: #wrapper -->
+  </body>
 </html>
