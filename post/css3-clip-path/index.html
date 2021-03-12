@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>scss 学习笔记总结 | 肥喵喵</title>
+<title>CSS3 clip-path | 肥喵喵</title>
 <meta name="description" content="杂记" />
 <link rel="shortcut icon" href="http://zhuluu.cn/favicon.ico">
 <link rel="stylesheet" href="http://zhuluu.cn/styles/main.css">
@@ -15,12 +15,12 @@
 <script src="http://zhuluu.cn/media/js/jquery.magnific-popup.min.js"></script>
 <script src="http://zhuluu.cn/media/js/functions.js"></script>
     <meta name="referrer" content="never">
-    <meta name="description" content="
-注释
-设置文件编码 编码@charset &quot;encoding-name&quot;; , 若需要支持中文注释,在SCSS文件的顶部写上@charset &quot;UTF-8&quot;;
+    <meta name="description" content="CSS 属性使用裁剪方式创建元素的可显示区域。区域内的部分显示，区域外的隐藏。
 
-..." />
-    <meta name="keywords" content="" />
+1 . 属性介绍
+clip-path 属性可以创建一个只有元素的部分区域可以显示的剪切区域。区域内的部分显示，区域外的隐藏。
+剪切区域是被引用内嵌的URL定义..." />
+    <meta name="keywords" content="css" />
     <script src="http://zhuluu.cn/media/js/waterfall.min.js"></script>
     <script src="http://zhuluu.cn/media/js/prism.min.js"></script>
   </head>
@@ -88,21 +88,23 @@
       <main id="single" class="main grid-container fullcover no-sidebar aos-init aos-animate" data-aos="fade">
 
         <div class="center content">
-          <div class="featured-image cover" style="background-image: url('/media/images/custom-featureImage.jpg');">
+          <div class="featured-image cover" style="background-image: url('http://zhuluu.cn/post-images/css3-clip-path.gif');">
             <div class="meta top"> 
-              <time class="meta-info" style="float:left;" datetime="2019-10-29"><i class="fa fa-calendar"></i><span class="lately">1 年前</span></time>
+              <time class="meta-info" style="float:left;" datetime="2021-03-11"><i class="fa fa-calendar"></i><span class="lately">17 小时前</span></time>
               
-              <a href="http://zhuluu.cn/post/scss-xue-xi-bi-ji-zong-jie/#comments" class="comments meta-info" title="">
-                <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/scss-xue-xi-bi-ji-zong-jie/"> </span>
+              <a href="http://zhuluu.cn/post/css3-clip-path/#comments" class="comments meta-info" title="">
+                <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/css3-clip-path/"> </span>
               </a>
-              <span id="/scss-xue-xi-bi-ji-zong-jie/" class="leancloud_visitors views-counter meta-info" title=""><i class="fa fa-leancloud remixicon"></i><span class="leancloud-visitors-count"></span></span>
+              <span id="/css3-clip-path/" class="leancloud_visitors views-counter meta-info" title=""><i class="fa fa-leancloud remixicon"></i><span class="leancloud-visitors-count"></span></span>
               
             </div>
             <div class="info">
               <div class="tags ">
                 
+                      <a href="http://zhuluu.cn/tag/xnvklbbvw/" class="ctag ctag-0 ctag-xnvklbbvw" aria-label="">css</a>
+                    
               </div>
-              <h1 class="title ularge white bold">scss 学习笔记总结</h1>
+              <h1 class="title ularge white bold">CSS3 clip-path</h1>
             </div>
           </div>
         </div>  
@@ -112,10 +114,174 @@
             <article class="main-article post">
               <section class="post-content">
                 <div class="text">
-                  <ul>
-<li>注释</li>
-<li>设置文件编码 编码<code>@charset &quot;encoding-name&quot;;</code> , 若需要支持中文注释,在SCSS文件的顶部写上<code>@charset &quot;UTF-8&quot;;</code></li>
-</ul>
+                  <p>CSS 属性使用裁剪方式创建元素的可显示区域。区域内的部分显示，区域外的隐藏。</p>
+<!-- more -->
+<h2 id="1-属性介绍">1 . 属性介绍</h2>
+<p>clip-path 属性可以创建一个只有元素的部分区域可以显示的剪切区域。区域内的部分显示，区域外的隐藏。</p>
+<p>剪切区域是被引用内嵌的URL定义的路径或者外部svg的路径，或者作为一个形状例如circle()。</p>
+<h2 id="2-属性使用">2. 属性使用</h2>
+<ol>
+<li>
+<p>圆形 <code>clip-path: circle(50% at 50% 50%); //circle(半径 at 圆心坐标)</code></p>
+<pre><code class="language-css">.path4 {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    background: #2e7f40;
+}
+.path4::after {
+    content: &quot;mask&quot;;
+    color: #2e7f40;
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    clip-path: circle(50% at 50% 50%);
+    background-color: #d6ffea;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+</code></pre>
+</li>
+</ol>
+<!-- more -->
+<pre><code>}
+```
+</code></pre>
+<img style="width:200px;height:200px; " src='file:///Users/zhu/Documents/Gridea/post-images/1615457085825.jpg'/>
+<ol start="2">
+<li>椭圆 <code>clip-path: ellipse(50% 50% at 10% 20%);</code></li>
+<li>多边形 <code>clip-path: polygon(5px 10px, 16px 3px, 16px 17px);</code><pre><code class="language-css"> .path1 {
+    clip-path: polygon(5px 10px, 16px 3px, 16px 17px);
+  }
+  .path2 {
+    clip-path: polygon(3px 5px, 17px 5px, 10px 16px);
+  }
+  .path3 {
+    clip-path: polygon(
+      5px 10px,
+      16px 3px,
+      16px 10px,
+      26px 10px,
+      26px 3px,
+      37px 10px,
+      26px 17px,
+      26px 10px,
+      16px 10px,
+      16px 17px
+    );
+  }
+  .path4 {
+    clip-path: polygon(
+      5px 10px,
+      16px 3px,
+      16px 10px,
+      36px 10px,
+      36px 3px,
+      47px 10px,
+      36px 17px,
+      36px 10px,
+      16px 10px,
+      16px 17px
+    );
+  }
+  .path5 {
+    clip-path: polygon(
+      5px 10px,
+      16px 3px,
+      16px 9px,
+      36px 9px,
+      36px 3px,
+      47px 10px,
+      36px 17px,
+      36px 10px,
+      16px 10px,
+      16px 17px
+    );
+  }
+  .path6 {
+    clip-path: polygon(
+      5px 10px,
+      16px 3px,
+      16px 9px,
+      36px 9px,
+      36px 3px,
+      47px 10px,
+      36px 17px,
+      36px 11px,
+      16px 11px,
+      16px 17px
+    );
+  }
+  .path7 {
+    clip-path: polygon(
+      5px 11px,
+      5px 9px,
+      16px 3px,
+      26px 3px,
+      40px 9px,
+      48px 15px,
+      48px 5px,
+      40px 11px,
+      26px 17px,
+      16px 17px
+    );
+  }
+</code></pre>
+</li>
+</ol>
+<img style="width:100px; " src='file:///Users/zhu/Documents/Gridea/post-images/1301615458715.jpg'/>
+<h2 id="3-奇思妙想-sprites-小图标">3. 奇思妙想 Sprites 小图标</h2>
+<p>可以把照片剪裁成图标模板，或者是任意的元素，按钮、文字等都可以剪裁成小图标的样子</p>
+<pre><code class="language-html"> &lt;svg
+      version=&quot;1.1&quot;
+      xmlns=&quot;http://www.w3.org/2000/svg&quot;
+      width=&quot;0&quot;
+      height=&quot;0&quot;
+      style=&quot;position:absolute;&quot;
+    &gt;
+      &lt;clipPath id=&quot;1615513396325&quot; fill=&quot;none&quot;&gt;
+        &lt;path
+          transform=&quot;scale(0.044643, 0.039063)&quot;
+          d=&quot;M439.39 362.29c-19.32-20.76-55.47-51.99-55.47-154.29 0-77.7-54.48-139.9-127.94-155.16V32c0-17.67-14.32-32-31.98-32s-31.98 14.33-31.98 32v20.84C118.56 68.1 64.08 130.3 64.08 208c0 102.3-36.15 133.53-55.47 154.29-6 6.45-8.66 14.16-8.61 21.71.11 16.4 12.98 32 32.1 32h383.8c19.12 0 32-15.6 32.1-32 .05-7.55-2.61-15.27-8.61-21.71zM67.53 368c21.22-27.97 44.42-74.33 44.53-159.42 0-.2-.06-.38-.06-.58 0-61.86 50.14-112 112-112s112 50.14 112 112c0 .2-.06.38-.06.58.11 85.1 23.31 131.46 44.53 159.42H67.53zM224 512c35.32 0 63.97-28.65 63.97-64H160.03c0 35.35 28.65 64 63.97 64z&quot;
+        /&gt;
+      &lt;/clipPath&gt;
+      &lt;clipPath id=&quot;1615513375139&quot; fill=&quot;none&quot;&gt;
+        &lt;path
+          transform=&quot;scale(0.040323, 0.039063)&quot;
+          d=&quot;M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm0 448c-110.3 0-200-89.7-200-200S137.7 56 248 56s200 89.7 200 200-89.7 200-200 200zm105.6-151.4c-25.9 8.3-64.4 13.1-105.6 13.1s-79.6-4.8-105.6-13.1c-9.9-3.1-19.4 5.4-17.7 15.3 7.9 47.1 71.3 80 123.3 80s115.3-32.9 123.3-80c1.6-9.8-7.7-18.4-17.7-15.3zM168 240c17.7 0 32-14.3 32-32s-14.3-32-32-32-32 14.3-32 32 14.3 32 32 32zm160 0c17.7 0 32-14.3 32-32s-14.3-32-32-32-32 14.3-32 32 14.3 32 32 32z&quot;
+        /&gt;
+      &lt;/clipPath&gt;
+      &lt;clipPath id=&quot;1615513359361&quot; fill=&quot;none&quot;&gt;
+        &lt;path
+          transform=&quot;scale(0.040323, 0.039063)&quot;
+          d=&quot;M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm0 448c-110.3 0-200-89.7-200-200S137.7 56 248 56s200 89.7 200 200-89.7 200-200 200zm96-312c-44.2 0-80 35.8-80 80s35.8 80 80 80 80-35.8 80-80-35.8-80-80-80zm0 128c-26.5 0-48-21.5-48-48s21.5-48 48-48 48 21.5 48 48-21.5 48-48 48zm0-72c-13.3 0-24 10.7-24 24s10.7 24 24 24 24-10.7 24-24-10.7-24-24-24zm-112 24c0-44.2-35.8-80-80-80s-80 35.8-80 80 35.8 80 80 80 80-35.8 80-80zm-80 48c-26.5 0-48-21.5-48-48s21.5-48 48-48 48 21.5 48 48-21.5 48-48 48zm0-72c-13.3 0-24 10.7-24 24s10.7 24 24 24 24-10.7 24-24-10.7-24-24-24zm160 144H184c-13.2 0-24 10.8-24 24s10.8 24 24 24h128c13.2 0 24-10.8 24-24s-10.8-24-24-24z&quot;
+        /&gt;
+      &lt;/clipPath&gt;
+    &lt;/svg&gt;
+    &lt;ul id=&quot;ul&quot;&gt;
+      &lt;li&gt;&lt;i class=&quot;icon&quot; style=&quot;--clipPath:url(#1615513396325)&quot;&gt;&lt;/i&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;i class=&quot;icon&quot; style=&quot;--clipPath:url(#1615513375139)&quot;&gt;&lt;/i&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;i class=&quot;icon&quot; style=&quot;--clipPath:url(#1615513359361)&quot;&gt;&lt;/i&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+
+
+
+    
+</code></pre>
+<pre><code class="language-css">.icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: #0d513d;
+    -webkit-clip-path: var(--clipPath);
+    clip-path: var(--clipPath);
+    vertical-align: middle;
+    margin-right: 1ch;
+    transform: scale(1.5);
+}
+</code></pre>
+<p>效果图<br>
+<img style="width:200px;height:200px; " src='file:///Users/zhu/Documents/Gridea/post-images/1321615514110.jpg'/></p>
 
                 </div>
                 <div class="clear"></div>
@@ -125,6 +291,19 @@
 
             <section class="related section">
               
+              
+              <article class="next grid-50 tablet-grid-50 grid-parent">
+                <div class="thumb cover lazy loaded" style="background-image: url('http://zhuluu.cn/media/images/gridea.jpg');"></div>
+                 <a href="http://zhuluu.cn/post/es6-ji-es5-chang-yong-fang-fa/" class="full-link"></a>
+                 <div class="info">
+                  <time datetime="2020-11-19">2020-11-19</time>
+                  <h4 class="title white no-margin">ES6及ES5常用方法</h4>
+                </div>
+                 <span class="epcl-button red">
+                  <img src="http://zhuluu.cn/media/images/right-arrow.svg" width="15" alt="Left Arrow">
+                </span>
+                <div class="overlay"></div>
+              </article>
               
 
                 <div class="clear"></div>

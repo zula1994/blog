@@ -32,19 +32,13 @@ Safar..." />
         <div class="menu-wrapper">
           <div class="">
             <div class="logo">
-              <a href="http://zhuluu.cn"><img src="" alt=""></a>
+              <a href="http://zhuluu.cn"><img src="/media/images/custom-headerLogo.jpg" alt=""></a>
             </div>
             <!-- start: .main-nav -->
 
             <nav class="main-nav grid-container grid-parent">
               <ul id="menu-header" class="menu gradient-effect">
                 <li class=""><a href="http://zhuluu.cn" class="menu">首页</a></li>
-                
-                  <li class="" >
-                    <a href="/" class="menu">
-                      首页
-                    </a>
-                  </li>
                 
                   <li class="" >
                     <a href="/archives" class="menu">
@@ -80,7 +74,7 @@ Safar..." />
       <div class="hide-on-mobile hide-on-tablet hide-on-desktop">
         <div id="search-lightbox" class="grid-container grid-small grid-parent mfp-hide">
           <div class="search-wrapper section">
-            <form id="gridea-search-form" data-update="1615451405061" action="/search/index.html" class="search-form" _lpchecked="1">
+            <form id="gridea-search-form" data-update="1615515615087" action="/search/index.html" class="search-form" _lpchecked="1">
               <input type="text" name="q" id="s" value="" class="search-field" placeholder="搜点啥..." aria-label="搜点啥..." required="">
               <button type="submit" class="submit" aria-label="Submit">
                 <i class="fa fa-search-line"></i>
@@ -93,9 +87,14 @@ Safar..." />
       <main id="single" class="main grid-container fullcover no-sidebar aos-init aos-animate" data-aos="fade">
 
         <div class="center content">
-          <div class="featured-image cover" style="background-image: url('');">
+          <div class="featured-image cover" style="background-image: url('/media/images/custom-featureImage.jpg');">
             <div class="meta top"> 
               <time class="meta-info" style="float:left;" datetime="2020-08-17"><i class="fa fa-calendar"></i><span class="lately">7 个月前</span></time>
+              
+              <a href="http://zhuluu.cn/post/jie-jue-transform-zhong-z-index-zai-safari-liu-lan-qi-zhong-bu-sheng-xiao-de-yuan-yin/#comments" class="comments meta-info" title="">
+                <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/jie-jue-transform-zhong-z-index-zai-safari-liu-lan-qi-zhong-bu-sheng-xiao-de-yuan-yin/"> </span>
+              </a>
+              <span id="/jie-jue-transform-zhong-z-index-zai-safari-liu-lan-qi-zhong-bu-sheng-xiao-de-yuan-yin/" class="leancloud_visitors views-counter meta-info" title=""><i class="fa fa-leancloud remixicon"></i><span class="leancloud-visitors-count"></span></span>
               
             </div>
             <div class="info">
@@ -172,9 +171,26 @@ Safar..." />
               
             
               <div id="comments" class="bg-white hosted ">
-                <p>请到客户端“主题--自定义配置--valine”中填入ID和KEY</p>
+                <div class="clear"></div>
+<script>
+jQuery(document).ready(function($){
+    $('.vemoji-btn').text('😀');
+    $("#comments").on('click', 'span.vat',function(){
+        $(this).parent('div.vmeta').next("div.vcontent").after($("div.vwrap"));
+        $('textarea#veditor').focus();
+    })
+    if(window.location.hash){
+        var checkExist = setInterval(function() {
+            if ($(window.location.hash).length) {
+                $('html, body').animate({scrollTop: $(window.location.hash).offset().top-200}, 600);
+                clearInterval(checkExist);
+            }
+        }, 100);
+    }
+})
+</script>
+
               </div>
-              <div class="clear"></div>
             
 
             </div>
@@ -190,8 +206,23 @@ Safar..." />
                   
                   
                   <article class="item post-0 post type-post status-publish format-standard has-post-thumbnail hentry">
+                    <a href="http://zhuluu.cn/post/css3-clip-path/" class="thumb hover-effect">
+                      <span class="fullimage cover" style="display:block;border-radius:50%;background-image: url('http://zhuluu.cn/post-images/css3-clip-path.gif');"></span>
+                    </a>
+                    <div class="info gradient-effect">
+                      <time datetime="2021-03-11">2021-03-11</time>
+                      <h4 class="title usmall">
+                        <a href="http://zhuluu.cn/post/css3-clip-path/">CSS3 clip-path</a>
+                      </h4>
+                    </div>
+                    <div class="clear"></div>
+                  </article>
+                  
+                  
+                  
+                  <article class="item post-1 post type-post status-publish format-standard has-post-thumbnail hentry">
                     <a href="http://zhuluu.cn/post/es6-ji-es5-chang-yong-fang-fa/" class="thumb hover-effect">
-                      <span class="fullimage cover" style="display:block;border-radius:50%;background-image: url('');"></span>
+                      <span class="fullimage cover" style="display:block;border-radius:50%;background-image: url('/media/images/custom-featureImage.jpg');"></span>
                     </a>
                     <div class="info gradient-effect">
                       <time datetime="2020-11-19">2020-11-19</time>
@@ -204,9 +235,9 @@ Safar..." />
                   
                   
                   
-                  <article class="item post-1 post type-post status-publish format-standard has-post-thumbnail hentry">
+                  <article class="item post-2 post type-post status-publish format-standard has-post-thumbnail hentry">
                     <a href="http://zhuluu.cn/post/css-mian-shi-ti-01-shi-me-shi-bfcshi-me-tiao-jian-xia-hui-hong-fa-ying-yong-chang-jing-you-na-xie/" class="thumb hover-effect">
-                      <span class="fullimage cover" style="display:block;border-radius:50%;background-image: url('');"></span>
+                      <span class="fullimage cover" style="display:block;border-radius:50%;background-image: url('/media/images/custom-featureImage.jpg');"></span>
                     </a>
                     <div class="info gradient-effect">
                       <time datetime="2020-10-14">2020-10-14</time>
@@ -218,19 +249,6 @@ Safar..." />
                   </article>
                   
                   
-                  
-                  <article class="item post-2 post type-post status-publish format-standard has-post-thumbnail hentry">
-                    <a href="http://zhuluu.cn/post/jie-jue-transform-zhong-z-index-zai-safari-liu-lan-qi-zhong-bu-sheng-xiao-de-yuan-yin/" class="thumb hover-effect">
-                      <span class="fullimage cover" style="display:block;border-radius:50%;background-image: url('');"></span>
-                    </a>
-                    <div class="info gradient-effect">
-                      <time datetime="2020-08-17">2020-08-17</time>
-                      <h4 class="title usmall">
-                        <a href="http://zhuluu.cn/post/jie-jue-transform-zhong-z-index-zai-safari-liu-lan-qi-zhong-bu-sheng-xiao-de-yuan-yin/">解决transform中z-index在safari浏览器中不生效的原因</a>
-                      </h4>
-                    </div>
-                    <div class="clear"></div>
-                  </article>
                   
                   
                   
@@ -292,11 +310,11 @@ Safar..." />
             <div class="clear"></div>
         </div>
 
-        <div class="logo">
-          <a href="http://zhuluu.cn"><img src="" alt=""></a>
-        </div>
+        <!-- <div class="logo">
+          <a href="http://zhuluu.cn"><img src="/media/images/custom-footerLogo.jpg" alt=""></a>
+        </div> -->
         <p class="published border-effect">
-          ©2019 共 8 篇文章
+          ©2021 共 9 篇文章
           <br/>
           Theme <a href="https://gridea.dev/" target="_blank">「breek」</a> Powered by <a href="https://gridea.dev/" target="_blank">「Gridea」</a>
         </p>
@@ -309,6 +327,19 @@ Safar..." />
     <div class="clear"></div>
 
         
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/valine/1.3.10/Valine.Pure.min.js"></script>
+<script>
+    new Valine({
+        el: '#comments',
+        appId: 'Gon7OXXalgRp25sCIdzOrbb7-gzGzoHsz' ,
+        appKey: 'lMFDLT1xeMLvbn6L37g7mnEJ',
+        pageSize: 30,
+        placeholder: '既然来了，那就留个痕迹吧~',
+        visitor: true // 阅读量统计
+    })
+</script>
+    
 
       
     <script src="http://zhuluu.cn/media/js/functions-post.js"></script>
