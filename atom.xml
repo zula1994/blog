@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://zhuluu.cn</id>
     <title>肥喵喵</title>
-    <updated>2021-03-12T08:09:46.057Z</updated>
+    <updated>2021-03-12T08:36:53.463Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="http://zhuluu.cn"/>
     <link rel="self" href="http://zhuluu.cn/atom.xml"/>
@@ -10,6 +10,72 @@
     <logo>http://zhuluu.cn/images/avatar.png</logo>
     <icon>http://zhuluu.cn/favicon.ico</icon>
     <rights>All rights reserved 2021, 肥喵喵</rights>
+    <entry>
+        <title type="html"><![CDATA[css 整块超长溢出打点省略]]></title>
+        <id>http://zhuluu.cn/post/css-zheng-kuai-chao-chang-yi-chu-da-dian-sheng-lue/</id>
+        <link href="http://zhuluu.cn/post/css-zheng-kuai-chao-chang-yi-chu-da-dian-sheng-lue/">
+        </link>
+        <updated>2021-03-12T08:19:37.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="文本单行省略">文本单行省略</h2>
+<pre><code class="language-css">{
+    width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+</code></pre>
+<h2 id="文本多行省略">文本多行省略</h2>
+<pre><code class="language-css">{
+    width: 200px;
+    overflow : hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+</code></pre>
+<h2 id="整块超长溢出打点省略">整块超长溢出打点省略</h2>
+<pre><code class="language-css"> .container {
+    width: 200px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #fff;
+    display: flex;
+    background: #fff;
+    box-shadow: 1px 1px 4px 2px #eee;
+}
+.tags {
+    width: 200px;
+    white-space: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    transition: all 1s;
+}
+.tags span {
+    display: inline-block;
+    padding: 5px 10px;
+    background: #2161e2;
+    color: #eef6a1;
+    border-radius: 4px;
+    margin-right: 6px;
+    font-size: 14px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;div class=&quot;container&quot;&gt;
+    &lt;div class=&quot;tags&quot;&gt;
+    &lt;span&gt;满300减20&lt;/span&gt;
+    &lt;span&gt;5件85折&lt;/span&gt;
+    &lt;span&gt;5件5折&lt;/span&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<p>效果图:</p>
+<figure data-type="image" tabindex="1"><img src="http://zhuluu.cn/post-images/1615538066906.jpg" alt="" loading="lazy"></figure>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[CSS3 clip-path]]></title>
         <id>http://zhuluu.cn/post/css3-clip-path/</id>

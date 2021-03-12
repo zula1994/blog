@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>服务器操作 | 肥喵喵</title>
+<title>css 整块超长溢出打点省略 | 肥喵喵</title>
 <meta name="description" content="杂记" />
 <link rel="shortcut icon" href="http://zhuluu.cn/favicon.ico">
 <link rel="stylesheet" href="http://zhuluu.cn/styles/main.css">
@@ -15,9 +15,18 @@
 <script src="http://zhuluu.cn/media/js/jquery.magnific-popup.min.js"></script>
 <script src="http://zhuluu.cn/media/js/functions.js"></script>
     <meta name="referrer" content="never">
-    <meta name="description" content="远程连接
-" />
-    <meta name="keywords" content="" />
+    <meta name="description" content="文本单行省略
+{
+    width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+文本多行省略
+{
+    w..." />
+    <meta name="keywords" content="css" />
     <script src="http://zhuluu.cn/media/js/waterfall.min.js"></script>
     <script src="http://zhuluu.cn/media/js/prism.min.js"></script>
   </head>
@@ -85,21 +94,23 @@
       <main id="single" class="main grid-container fullcover no-sidebar aos-init aos-animate" data-aos="fade">
 
         <div class="center content">
-          <div class="featured-image cover" style="background-image: url('/media/images/custom-featureImage.jpg');">
+          <div class="featured-image cover" style="background-image: url('http://zhuluu.cn/post-images/css-zheng-kuai-chao-chang-yi-chu-da-dian-sheng-lue.jpg');">
             <div class="meta top"> 
-              <time class="meta-info" style="float:left;" datetime="2019-09-20"><i class="fa fa-calendar"></i><span class="lately">1 年前</span></time>
+              <time class="meta-info" style="float:left;" datetime="2021-03-12"><i class="fa fa-calendar"></i><span class="lately">17 分钟前</span></time>
               
-              <a href="http://zhuluu.cn/post/fu-wu-qi-cao-zuo/#comments" class="comments meta-info" title="">
-                <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/fu-wu-qi-cao-zuo/"> </span>
+              <a href="http://zhuluu.cn/post/css-zheng-kuai-chao-chang-yi-chu-da-dian-sheng-lue/#comments" class="comments meta-info" title="">
+                <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/css-zheng-kuai-chao-chang-yi-chu-da-dian-sheng-lue/"> </span>
               </a>
-              <span id="/fu-wu-qi-cao-zuo/" class="leancloud_visitors views-counter meta-info" title=""><i class="fa fa-leancloud remixicon"></i><span class="leancloud-visitors-count"></span></span>
+              <span id="/css-zheng-kuai-chao-chang-yi-chu-da-dian-sheng-lue/" class="leancloud_visitors views-counter meta-info" title=""><i class="fa fa-leancloud remixicon"></i><span class="leancloud-visitors-count"></span></span>
               
             </div>
             <div class="info">
               <div class="tags ">
                 
+                      <a href="http://zhuluu.cn/tag/xnvklbbvw/" class="ctag ctag-0 ctag-xnvklbbvw" aria-label="">css</a>
+                    
               </div>
-              <h1 class="title ularge white bold">服务器操作</h1>
+              <h1 class="title ularge white bold">css 整块超长溢出打点省略</h1>
             </div>
           </div>
         </div>  
@@ -109,7 +120,64 @@
             <article class="main-article post">
               <section class="post-content">
                 <div class="text">
-                  <h2 id="远程连接">远程连接</h2>
+                  <h2 id="文本单行省略">文本单行省略</h2>
+<pre><code class="language-css">{
+    width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+</code></pre>
+<h2 id="文本多行省略">文本多行省略</h2>
+<pre><code class="language-css">{
+    width: 200px;
+    overflow : hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+</code></pre>
+<h2 id="整块超长溢出打点省略">整块超长溢出打点省略</h2>
+<pre><code class="language-css"> .container {
+    width: 200px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #fff;
+    display: flex;
+    background: #fff;
+    box-shadow: 1px 1px 4px 2px #eee;
+}
+.tags {
+    width: 200px;
+    white-space: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    transition: all 1s;
+}
+.tags span {
+    display: inline-block;
+    padding: 5px 10px;
+    background: #2161e2;
+    color: #eef6a1;
+    border-radius: 4px;
+    margin-right: 6px;
+    font-size: 14px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;div class=&quot;container&quot;&gt;
+    &lt;div class=&quot;tags&quot;&gt;
+    &lt;span&gt;满300减20&lt;/span&gt;
+    &lt;span&gt;5件85折&lt;/span&gt;
+    &lt;span&gt;5件5折&lt;/span&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<p>效果图:</p>
+<figure data-type="image" tabindex="1"><img src="http://zhuluu.cn/post-images/1615538066906.jpg" alt="" loading="lazy"></figure>
 
                 </div>
                 <div class="clear"></div>
@@ -119,6 +187,19 @@
 
             <section class="related section">
               
+              
+              <article class="next grid-50 tablet-grid-50 grid-parent">
+                <div class="thumb cover lazy loaded" style="background-image: url('http://zhuluu.cn/post-images/css3-clip-path.gif');"></div>
+                 <a href="http://zhuluu.cn/post/css3-clip-path/" class="full-link"></a>
+                 <div class="info">
+                  <time datetime="2021-03-11">2021-03-11</time>
+                  <h4 class="title white no-margin">CSS3 clip-path</h4>
+                </div>
+                 <span class="epcl-button red">
+                  <img src="http://zhuluu.cn/media/images/right-arrow.svg" width="15" alt="Left Arrow">
+                </span>
+                <div class="overlay"></div>
+              </article>
               
 
                 <div class="clear"></div>
